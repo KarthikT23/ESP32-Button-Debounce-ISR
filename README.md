@@ -29,4 +29,21 @@ The code enables internal pull-up resistors for the GPIO pins (GPIO_PULLUP_ENABL
 ![Circuit](https://github.com/user-attachments/assets/365d8430-ace8-4b0a-8ce1-95a312a03c8d)
 
 
+# Code Explanation
+1) The code configures GPIO18 and GPIO19 as input pins with internal pull-up resistors.
+
+2) When a button is pressed, an interrupt is triggered on the rising edge (button press).
+
+3) The interrupt service routine (ISR) checks if the button press is valid (debounced) and sets the corresponding flag (button1_pressed or button2_pressed).
+
+4) In the app_main function, the code continuously checks if any button was pressed and logs the corresponding message.
+
+# Output 
+![image](https://github.com/user-attachments/assets/dab6eaaa-793c-42fc-8244-772167bde598)
+
+
+# References
+1) https://www.youtube.com/watch?v=fD7B9LI45Rk&t=155s
+2) https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/index.html
+3) 
 
