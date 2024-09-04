@@ -45,5 +45,5 @@ The code enables internal pull-up resistors for the GPIO pins (GPIO_PULLUP_ENABL
 # References
 1) https://www.youtube.com/watch?v=fD7B9LI45Rk&t=155s
 2) https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/index.html
-3) 
+
 
