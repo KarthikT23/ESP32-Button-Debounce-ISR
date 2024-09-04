@@ -1,5 +1,5 @@
 # ESP32-Button-Debounce-ISR
-This project demonstrates how to handle button inputs with debouncing using Interrupt Service Routines (ISR) on the ESP32 Microcontroller, using Espressif-IDE..
+This project demonstrates how to handle button inputs with debouncing using Interrupt Service Routines (ISR) on the ESP32 Microcontroller, using Espressif-IDE.
 # Requirements
 1) ESP32 Development Board (e.g., ESP32 DevKitC)
 
