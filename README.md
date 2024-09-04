@@ -1,44 +1,53 @@
-# ESP32-Button-Debounce-ISR
-This project demonstrates how to handle button inputs with debouncing using Interrupt Service Routines (ISR) on the ESP32 Microcontroller, using Espressif-IDE.
-# Requirements
-1) ESP32 Development Board (e.g., ESP32 DevKitC)
+| Supported Targets | ESP32 | ESP32-C2 | ESP32-C3 | ESP32-C6 | ESP32-H2 | ESP32-P4 | ESP32-S2 | ESP32-S3 | Linux |
+| ----------------- | ----- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | ----- |
 
-2) Two Push Buttons (normally open type)
+# Hello World Example
 
-3) Two Pull-Up Resistors (Optional, 10kΩ each if internal pull-up resistors are not used)
+Starts a FreeRTOS task to print "Hello World".
 
-4) Breadboard
- 
-5) Jumper Wires
+(See the README.md file in the upper level 'examples' directory for more information about examples.)
 
-# Circuit Connections
-a) Push Button 1:
-One terminal of Button 1 to GPIO18 on the ESP32 (labeled as BUTTON1_GPIO in the code).
-Other terminal of Button 1 to GND (Ground).
+## How to use example
 
-b) Push Button 2:
-One terminal of Button 2 to GPIO19 on the ESP32 (labeled as BUTTON2_GPIO in the code).
-Other terminal of Button 2 to GND.
+Follow detailed instructions provided specifically for this example.
 
-c) Internal Pull-Up Resistors:
-The code enables internal pull-up resistors for the GPIO pins (GPIO_PULLUP_ENABLE). Therefore, external pull-up resistors are not strictly necessary unless you prefer to use them.
+Select the instructions depending on Espressif chip installed on your development board:
+
+- [ESP32 Getting Started Guide](https://docs.espressif.com/projects/esp-idf/en/stable/get-started/index.html)
+- [ESP32-S2 Getting Started Guide](https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/get-started/index.html)
 
 
-![Circuit](https://github.com/user-attachments/assets/b4ca65f1-acdd-4334-bcd7-2512483aa6e1)
+## Example folder contents
 
+The project **hello_world** contains one source file in C language [hello_world_main.c](main/hello_world_main.c). The file is located in folder [main](main).
 
+ESP-IDF projects are built using CMake. The project build configuration is contained in `CMakeLists.txt` files that provide set of directives and instructions describing the project's source files and targets (executable, library, or both).
 
-# Code explanation
-A) The code configures GPIO18 and GPIO19 as input pins with internal pull-up resistors.
+Below is short explanation of remaining files in the project folder.
 
-B) When a button is pressed, an interrupt is triggered on the rising edge (button press).
+```
+├── CMakeLists.txt
+├── pytest_hello_world.py      Python script used for automated testing
+├── main
+│   ├── CMakeLists.txt
+│   └── hello_world_main.c
+└── README.md                  This is the file you are currently reading
+```
 
-C) The interrupt service routine (ISR) checks if the button press is valid (debounced) and sets the corresponding flag (button1_pressed or button2_pressed).
+For more information on structure and contents of ESP-IDF projects, please refer to Section [Build System](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/build-system.html) of the ESP-IDF Programming Guide.
 
-D) In the app_main function, the code continuously checks if any button was pressed and logs the corresponding message.
+## Troubleshooting
 
+* Program upload failure
 
+    * Hardware connection is not correct: run `idf.py -p PORT monitor`, and reboot your board to see if there are any output logs.
+    * The baud rate for downloading is too high: lower your baud rate in the `menuconfig` menu, and try again.
 
-# References
-1) https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/index.html
-2) https://www.youtube.com/watch?v=fD7B9LI45Rk&t=155s
+## Technical support and feedback
+
+Please use the following feedback channels:
+
+* For technical queries, go to the [esp32.com](https://esp32.com/) forum
+* For a feature request or bug report, create a [GitHub issue](https://github.com/espressif/esp-idf/issues)
+
+We will get back to you as soon as possible.
